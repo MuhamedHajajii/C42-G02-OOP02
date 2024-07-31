@@ -106,49 +106,78 @@ namespace Demo
              * 3- cann't made any condations or constraints on the attributes like make the maximum or minimum salary is 5000$
              */
 
-            /**
-             * to solve this problems we have to ways we mentioned them before
-             * properties ==>> New Way
-             * Setter and getter Properties ==>> Old Way
-             */
+            ///**
+            // * to solve this problems we have to ways we mentioned them before
+            // * properties ==>> New Way
+            // * Setter and getter Properties ==>> Old Way
+            // */
 
-            Employee employee;
-            employee = new Employee(10,"Hajajii",2000,20,20);
+            //Employee employee;
+            //employee = new Employee(10,"Hajajii",2000,20,20);
 
-            Console.WriteLine(employee.GetName()); ;
-            employee.SetName("Haji bs");
-            Console.WriteLine(employee.GetName()); ;
+            //Console.WriteLine(employee.GetName()); ;
+            //employee.SetName("Haji bs");
+            //Console.WriteLine(employee.GetName()); ;
 
-            // This is the first way to apply the encapsulation 
-            // separate the data definition [Attributes] from the data use [clint]
-            // now i can deal with my attricutes with indirect way
-            // i can change the name of the attributes only in my struct
-            // i can validate the data
-            // i can denay and grant the set or the get
-            // this was with the first approach
+            //// This is the first way to apply the encapsulation 
+            //// separate the data definition [Attributes] from the data use [clint]
+            //// now i can deal with my attricutes with indirect way
+            //// i can change the name of the attributes only in my struct
+            //// i can validate the data
+            //// i can denay and grant the set or the get
+            //// this was with the first approach
 
-            /** Second Approach with the property
-             * 1- Full Property
-             * 2- Automatic Property
-             * 3- Indexer
-             */
+            ///** Second Approach with the property
+            // * 1- Full Property
+            // * 2- Automatic Property
+            // * 3- Indexer
+            // */
 
-            Employee employee02;
-            employee02 = new Employee(50,"Salma",1000,20,20);
+            //Employee employee02;
+            //employee02 = new Employee(50,"Salma",1000,20,20);
 
-            Console.WriteLine(employee02.Salary); ;
-            employee02.Salary = 1500;
-            Console.WriteLine(employee02.Salary); ;
-            Console.WriteLine("================================");
-            Console.WriteLine(employee02.ToString());
-            Console.WriteLine($"Deductions = : {employee02.Deduction}"); ;
-            Console.WriteLine("================================");
-            Employee emp03 = new Employee(60,"Esmail",5000,10,10);
+            //Console.WriteLine(employee02.Salary); ;
+            //employee02.Salary = 1500;
+            //Console.WriteLine(employee02.Salary); ;
+            //Console.WriteLine("================================");
+            //Console.WriteLine(employee02.ToString());
+            //Console.WriteLine($"Deductions = : {employee02.Deduction}"); ;
+            //Console.WriteLine("================================");
+            //Employee emp03 = new Employee(60,"Esmail",5000,10,10);
 
-            Console.WriteLine(emp03.ToString());
-            Console.WriteLine($"Deductions = : {emp03.Deduction}"); ;
+            //Console.WriteLine(emp03.ToString());
+            //Console.WriteLine($"Deductions = : {emp03.Deduction}"); ;
 
             #endregion
+
+            #endregion
+
+            #region 3- PhoneBook
+            // Need to make a data type which will represent a phonebook
+            // implement it on the class or the struct will never matter in this step but the preferred implementation is the struct if you can 
+            // because it allocated in the stack
+
+            // the Defult Constructor the compiler generate with the struct
+            //PhoneBook Note = new PhoneBook();
+            // The User Defind Constructor
+
+            PhoneBook Note = new PhoneBook(3);
+
+            Note.AddPerson(0, "Aliaa", 123);
+            Note.AddPerson(1, "Mona", 465);
+            Note.AddPerson(2, "Ali", 789);
+
+            int PhoneNumber = Note.GetPersonNumber("Mona");
+            int PhoneNumber01 = Note.GetPersonNumber("Shimaa");
+
+            // Deal with the write line which takes the integer because it will only take integer
+            Console.WriteLine(PhoneNumber);
+            // Now it deals with the write line which take the object because it may take a string or number
+            Console.WriteLine(PhoneNumber == -1 ? "Not Found" : PhoneNumber);
+            Console.WriteLine(PhoneNumber01 == -1 ? "Not Found" : PhoneNumber01);
+
+            Note.SetPersonNumber("Mona", 999);
+            Console.WriteLine(Note.GetPersonNumber("Mona"));
 
             #endregion
 

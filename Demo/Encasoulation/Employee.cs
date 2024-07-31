@@ -19,7 +19,6 @@ namespace Demo.Encasoulation
         //public decimal empsalary; // Attribute
         #endregion
 
-
         #region Constructors
         // to avoid the problem to skip the defult validation you can deal direct with the property and let the property deal with the member vairable
         // if you inside the struct or the class you will deal with the attribute direct 
