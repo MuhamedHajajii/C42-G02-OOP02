@@ -179,6 +179,33 @@ namespace Demo
             Note.SetPersonNumber("Mona", 999);
             Console.WriteLine(Note.GetPersonNumber("Mona"));
 
+            // in the previous case we use the property in the old way
+            // in this way we will deal with the note as an array
+            // indexer always named with this and its only a property with parameters 
+
+            // Set the number using indexer
+            Note["Ali"] = 666;
+            // get Number using the indexer
+            Console.WriteLine(Note["Ali"]);
+
+            // always use the indexr when you want to deal with your object as an array or variable
+            // like the string it deal with the string as array
+
+            string Name = "aliaa";
+            Console.WriteLine(Name[0]);
+            //Name[0] = 'A'; //invalid 
+            // so the string allowed only the get not the set
+
+            Console.WriteLine(Note); // print the namespace and the datatype name
+
+            for(int i = 0; i < Note.Size; i++)
+            {
+                Console.WriteLine(Note[i]);
+            }
+
+            // the indexer is more easy to deal with and more complex to write 
+            // so in the external code it more easy
+
             #endregion
 
         }
