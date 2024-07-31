@@ -161,50 +161,135 @@ namespace Demo
             //PhoneBook Note = new PhoneBook();
             // The User Defind Constructor
 
-            PhoneBook Note = new PhoneBook(3);
+            //PhoneBook Note = new PhoneBook(3);
 
-            Note.AddPerson(0, "Aliaa", 123);
-            Note.AddPerson(1, "Mona", 465);
-            Note.AddPerson(2, "Ali", 789);
+            //Note.AddPerson(0, "Aliaa", 123);
+            //Note.AddPerson(1, "Mona", 465);
+            //Note.AddPerson(2, "Ali", 789);
 
-            int PhoneNumber = Note.GetPersonNumber("Mona");
-            int PhoneNumber01 = Note.GetPersonNumber("Shimaa");
+            //int PhoneNumber = Note.GetPersonNumber("Mona");
+            //int PhoneNumber01 = Note.GetPersonNumber("Shimaa");
 
-            // Deal with the write line which takes the integer because it will only take integer
-            Console.WriteLine(PhoneNumber);
-            // Now it deals with the write line which take the object because it may take a string or number
-            Console.WriteLine(PhoneNumber == -1 ? "Not Found" : PhoneNumber);
-            Console.WriteLine(PhoneNumber01 == -1 ? "Not Found" : PhoneNumber01);
+            //// Deal with the write line which takes the integer because it will only take integer
+            //Console.WriteLine(PhoneNumber);
+            //// Now it deals with the write line which take the object because it may take a string or number
+            //Console.WriteLine(PhoneNumber == -1 ? "Not Found" : PhoneNumber);
+            //Console.WriteLine(PhoneNumber01 == -1 ? "Not Found" : PhoneNumber01);
 
-            Note.SetPersonNumber("Mona", 999);
-            Console.WriteLine(Note.GetPersonNumber("Mona"));
+            //Note.SetPersonNumber("Mona", 999);
+            //Console.WriteLine(Note.GetPersonNumber("Mona"));
 
-            // in the previous case we use the property in the old way
-            // in this way we will deal with the note as an array
-            // indexer always named with this and its only a property with parameters 
+            //// in the previous case we use the property in the old way
+            //// in this way we will deal with the note as an array
+            //// indexer always named with this and its only a property with parameters 
 
-            // Set the number using indexer
-            Note["Ali"] = 666;
-            // get Number using the indexer
-            Console.WriteLine(Note["Ali"]);
+            //// Set the number using indexer
+            //Note["Ali"] = 666;
+            //// get Number using the indexer
+            //Console.WriteLine(Note["Ali"]);
 
-            // always use the indexr when you want to deal with your object as an array or variable
-            // like the string it deal with the string as array
+            //// always use the indexr when you want to deal with your object as an array or variable
+            //// like the string it deal with the string as array
 
-            string Name = "aliaa";
-            Console.WriteLine(Name[0]);
-            //Name[0] = 'A'; //invalid 
-            // so the string allowed only the get not the set
+            //string Name = "aliaa";
+            //Console.WriteLine(Name[0]);
+            ////Name[0] = 'A'; //invalid 
+            //// so the string allowed only the get not the set
 
-            Console.WriteLine(Note); // print the namespace and the datatype name
+            //Console.WriteLine(Note); // print the namespace and the datatype name
 
-            for(int i = 0; i < Note.Size; i++)
-            {
-                Console.WriteLine(Note[i]);
-            }
+            //for(int i = 0; i < Note.Size; i++)
+            //{
+            //    Console.WriteLine(Note[i]);
+            //}
 
             // the indexer is more easy to deal with and more complex to write 
             // so in the external code it more easy
+
+            #endregion
+
+            #region 4- Class
+            // now we finished the strund and enum both value types 
+            // now will take the class and after that we will start with the interface
+
+            /** What i can type inside the class ?
+             * 1- Attributes [Fields] Member Variables
+             * 2- Functions [constructor functions, Getter Setter, Methods]
+             * 3- Properties [Full Property, Automatic Property, Indexer]
+             * 4- Events
+             * 
+             * inside access modifiers
+             * 1- Private
+             * 2- Protected Private
+             * 3- Protected
+             * 4- Internal 
+             * 5- Internal Protected
+             * 6- Public
+             * 
+             * with access modifiers
+             * 1- Internal 
+             * 2- public
+             * 
+             */
+
+            /** Why to use the class ?
+             * If i have a car ? so should i declare every car as an object ? 
+             * i will init a user defind data type for the car and init it with the defult or the common attributes between all the cars
+             * create object from the main class which will include another car 
+             * so if you will not have any necessary to inherit anything 
+             * don't use class and go use struct 
+             * 
+             */
+
+            //Car C1;
+            /**
+             * Declare for a reference from type Car
+             * This Can Refer for an object from tyep car
+             * and an object which will inherit from the type car
+             * allocate 4 bytes in the stack
+             * zero bytes in the heap
+             */
+
+            //C1 = new Car();
+            /**
+             * The Combiler will generate the parameter less constructor by defult 
+             * this parameterless constructor now does not do any thing 
+             * and the new here deal with the object not just like the new in the struct
+             * Allocate the requierd bytes in the heap for the object 16 bytes
+             * Assign the Allocated bytes with the defult value of the data type
+             * call the user defind constructor function [if exists] in this case i use the defult one which the object made
+             * assign the refernece C1 with the allocated object at the heap
+             * so the new in the struct only to choose which constructor will be called 
+             * but here to 
+             */
+            //Console.WriteLine(C1);
+
+            //Car C1 = new();
+            //Car C2 = new(10,"BMW",290);
+            //Car C3 = new(10, "BMW");
+            Car C4 = new(10);
+
+            //Console.WriteLine("C1 =====================");
+            //Console.WriteLine(C1);
+            //Console.WriteLine("C2 =====================");
+            //Console.WriteLine(C2);
+            //Console.WriteLine("C3 =====================");
+            //Console.WriteLine(C3);
+            //Console.WriteLine("C4 =====================");
+            //Console.WriteLine(C4);
+
+            // So i can make a constructor chaining with the other constructor 
+            // first avoid the repetation inside the code
+            // second i can implement the code inside every constructor
+            // constructor chaning 
+            // using the property to implement the concept of encapsulation and the indexer to make the 
+            // property cotolr the set and the get from the attributes 
+            // and using the indexer to deal with them but deal with the object as a array
+
+            // car c1 ==> reference in the stack
+            // c1 - new car so in this step i create the object an allocate it in the stack
+            // id 10 speed 290 model reference for the string and the string will store in another place in the heap
+            // heap and stack is a reagion in the memory and this has a behavior differenct from the other 
 
             #endregion
 
