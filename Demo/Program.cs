@@ -293,6 +293,59 @@ namespace Demo
 
             #endregion
 
+            #region 5- Class and struct
+            /** What is the difference between class and struct ?
+             * why to use class or use the struct 
+             * The main differnece is how every one of them deal with the variable and the object 
+             * one is a value type and stack and the other is heap
+             * - Stack & Heap is a memory
+             * two reagions on for the stack and the other for the heap
+             * you must right a c sharp code to can deal with each one of them 
+             * its a region in my memory to stoare local variable and function call information
+             * it called a stack because it deal with the data like the collection stack
+             * it start to pull and pop with the first in last out FIFO
+             * this reagion deal with the same way of the stack colloection
+             * every time you call a function there is a strack frame will be allocated
+             * once the function is finished the stack frame will be removed from the stack and the stack pointer 
+             * will be back for the previous function
+             * The Main Property in the stack it so speed because it fixed size it know what to remove and what to allocate 
+             * it cotolr all the steps with just a pointer
+             * Limited Size for the stack make it only store a finite amount of data 
+             * if the stack is full it will lead to stack overflow
+             * and your applictation will be crashed 
+             * unpredictable behavior 
+             * loss in the data
+             * Heap
+             * is a region in the memory we called it heap because it randomly 
+             * it slower in allocate and deallocate 
+             * any object in the c sharp will be init with the new keyword
+             * in the heap the main resposibility for deallocate the data is the garbagte collector and it works once the heap is full 
+             * You don't have pointer in the heap
+             * its flexable and dynamical allocate the data
+             * Heap not fixed size so the garbage collector must always monitor your data 
+             * 
+             *memory in the stack allocate more fater than the heap because the stack is fixed size and first in last out 
+             *and using pointer so it know which function to use
+             *in the heap is not fixed size i can save unlimited amount of data as long as i got a physical memory to save data
+             *i can access it in the stack by function only 
+             * in the heap i can reach the data all over the data
+             * so one is by function call and the other any time 
+             * in the stack once the function return it will be removed 
+             * and the heap not like it 
+             * 
+             * the stack we will use it when i will store the data for short period local data and and function parameters
+             * and the heap a larger data or longer period of time 
+             * 
+             * like using the dependancy injection when i want to use the same object at more than one place 
+             * when i open a conection with the database in one class and want to use the same object in more than one place and be shared all over the objects where i need
+             * and want it to leave with me fo a long time
+             * depencancy injection
+             * 
+             */
+
+
+            #endregion
+
         }
     }
 }
