@@ -1,4 +1,7 @@
 ﻿using Demo.Encasoulation;
+using Demo.Inheritance;
+using System;
+using Common;
 
 namespace Demo
 {
@@ -267,7 +270,7 @@ namespace Demo
             //Car C1 = new();
             //Car C2 = new(10,"BMW",290);
             //Car C3 = new(10, "BMW");
-            Car C4 = new(10);
+            //Car C4 = new(10);
 
             //Console.WriteLine("C1 =====================");
             //Console.WriteLine(C1);
@@ -343,6 +346,47 @@ namespace Demo
              * 
              */
 
+
+            #endregion
+
+            #region 6- Inheritance
+            // The Main Reason to use this pillar is to avoid repetation in the code
+            // if i want to store data about an employee 
+            // and i have a full time employee and part time employee 
+            // i can implenet a data type for the employee and make two differenct employees part and full time 
+            // then i will make every one of those classes inherit the common from the parent 
+            // all these available only with the class not available with the struct
+
+
+            //Parent P = new Parent(1,2);
+            //Console.WriteLine($"P = {P}");
+            //Console.WriteLine($"Product = {P.Product()}");
+
+            //Console.WriteLine("================================");
+
+            //Child C = new Child(3, 4, 5);
+            //Console.WriteLine($"C = {C}");
+            //Console.WriteLine($"Product = {C.Product()}");
+
+            #endregion
+
+            #region 7- The Rest Access Modifiers
+            // Any Access modifiers with protected is related to inheritance
+            // And there are two parts for them with inheritance and without inheritance
+
+            //TypeA obj = new TypeA(); InValid 
+
+            //obj.X = 10; // Protected Private so  Private - InValid
+            //obj.Y = 10; // Protected so Protected Private - InValid
+            //obj.Z = 10; // Internal so Protected Internal - InValid
+            //obj.M = 10; // private so Protected Private - InValid
+
+            TypeB obj = new TypeB();
+
+            //obj.X = 10; // invlaid -- private
+            //obj.Y = 10; // invlaid -- private
+            //obj.Z = 10; // invlaid -- private
+            //obj.M = 10; // invlaid -- private
 
             #endregion
 
